@@ -50,33 +50,32 @@ function App() {
 <div className="w-screen h-64 bg-white"></div>
 
 
-
-<div className="w-screen h-64 bg-indigo-700 p-4">
-  <div className="flex flex-col h-full">
+<div className="w-screen bg-indigo-700 p-4">
+  <div className="flex flex-row h-full items-start">
     <div className="text-left flex-shrink-0">
       <h1 className="text-2xl font-bold">Profile</h1>
       <h2 className="text-xl">Basic Information</h2>
+      <table className="mt-4">
+        <tr>
+          <td>Birth-date:</td>
+          <td>11.10.2001</td>
+        </tr>
+        <tr>
+          <td>Residence:</td>
+          <td>İzmir, Turkey</td>
+        </tr>
+        <tr>
+          <td>Education:</td>
+          <td>Graduate from Faculty of Letters in American Studies, Ege University, 2023</td>
+        </tr>
+        <tr>
+          <td>Preferred role:</td>
+          <td>Frontend, UI</td>
+        </tr>
+      </table>
     </div>
-    <table className="mt-4 flex-shrink-0">
-      <tr>
-        <td>Birth-date:</td>
-        <td>11.10.2001</td>
-      </tr>
-      <tr>
-        <td>Residence:</td>
-        <td>İzmir, Turkey</td>
-      </tr>
-      <tr>
-        <td>Education:</td>
-        <td>Graduate from Faculty of Letters in American Studies, Ege University, 2023</td>
-      </tr>
-      <tr>
-        <td>Preferred role:</td>
-        <td>Frontend, UI</td>
-      </tr>
-    </table>
-    <div className="flex mt-4 flex-grow">
-      <img src="https://picsum.photos/200" alt="Profile Image" className="rounded-full mx-auto" />
+    <div className="flex flex-row items-center ml-4">
+      <img src="https://picsum.photos/200" alt="Profile Image" className="rounded-full" />
       <div className="ml-4">
         <h3 className="text-xl font-bold">About Me</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -87,8 +86,21 @@ function App() {
 
 
 
-    <div className="w-screen h-64 bg-lime-300"></div>
-    <footer className="w-screen h-64 bg-white"></footer>
+
+    <div className="w-screen h-64 bg-lime-300 flex items-center justify-center">
+    <h1 className="text-4xl font-bold text-indigo-700">Projects</h1>
+    </div>
+
+
+
+    <footer className="w-screen h-64 bg-white flex flex-col items-center justify-center">
+    <h1 className="text-4xl font-bold text-indigo-700">Send me a message!</h1>
+    <div>Got a question or proposal, or just want to say hello? Go ahead.
+    </div>
+    <div>kerimcanak@gmail.com
+    </div>
+
+    </footer>
     </>
   );
   
