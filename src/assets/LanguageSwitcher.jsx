@@ -28,7 +28,7 @@ function LanguageSwitcher() {
   };
 
   return (
-<div className="absolute top-0 right-0 mt-4 mr-4 text-white text-xl sm:text-sm md:mt-8 md:mr-8 md:text-base lg:mt-12 lg:mr-12 lg:text-lg xl:mt-16 xl:mr-16 xl:text-xl">      <span
+<div className="absolute top-0 right-0 mt-4 mr-4 text-white text-xl">      <span
         className="text-lime-300 cursor-pointer hover:text-orange-500"
         onClick={toggleLanguage}
       >
