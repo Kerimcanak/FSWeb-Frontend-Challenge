@@ -17,13 +17,14 @@ function LanguageSwitcher() {
 
   return (
     <div className="absolute top-0 right-0 mt-4 mr-4 text-white text-xl">
+      {language === 'en' ? '' : 'to '}
       <span
         className="text-lime-300 cursor-pointer hover:text-orange-500"
         onClick={toggleLanguage}
       >
         {language === 'en' ? 'Türkçe' : 'English'}
       </span>
-      {language === 'en' ? 'ye geç' : 'version'}
+      {language === 'en' ? 'ye geç' : ' version'}
     </div>
   );
 }
