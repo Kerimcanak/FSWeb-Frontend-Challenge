@@ -63,8 +63,7 @@ function App() {
     <label htmlFor="darkMode" className="text-black ml-2">dark mode</label>
   </div>
   <div className={`w-2/3 h-96 ${checked ? 'bg-indigo-950' : 'bg-indigo-700'} flex flex-col items-center justify-center relative`}>
-    <div className="absolute top-0 left-0 mt-4 ml-4 text-white text-xl"><span className="text-lime-300" >Kerimcan</span>AK</div>
-    
+    <div className="absolute top-0 left-0 mt-4 ml-4 text-white text-base md:text-base sm:text-sm"><span className="text-lime-300" >Kerimcan</span>AK</div>
     <LanguageSwitcher />
     <h1 className="text-4xl font-bold text-white mt-8">{firstHeader}</h1>
     <p className="text-white mt-4">
