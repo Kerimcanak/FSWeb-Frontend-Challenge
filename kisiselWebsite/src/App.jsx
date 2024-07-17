@@ -1,15 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { LanguageContext } from './assets/LanguageContext';
 import LanguageSwitcher from './assets/LanguageSwitcher';
 import img1 from './assets/img1.png';
 import img2 from './assets/img2.png';
 import items from './assets/items';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
-
-
+import Switch from "react-switch";
 
 function App() {
   const { state } = useContext(LanguageContext);
+
+
 
   /* Texts */
   const firstHeader = state.language === 'en' ? 'I am a Frontend Developer...' : 'Ben bir Frontend Yazılımcısıyım...';
@@ -25,6 +26,24 @@ function App() {
   const aboutMe = state.language === 'en' ? "About Me" : "Hakkımda";
   const aboutMeDetails = state.language === 'en' ? "Hello, everybody! <br/>I'm a front end developer,<br/> I like to work with computers, <br/>I follow sciences and reading. <br/>Every project is a new opportunity<br/> and a constant improvement." : "Merhaba! Ben bir front end developer'ım.<br/> Bilgisayarla ilgilenmeyi, bilimleri takip etmeyi <br/>ve okumayı seviyorum. Her proje yeni bir<br/> fırsat demek ve sürekli gelişmeyi sağlıyor."
 
+  /*Switch */
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (newChecked) => {
+    setChecked(newChecked);
+  };
+
+  const darkModeText = checked ? "lightMode" : "darkMode";
+
+  if (checked) {
+    // Apply dark mode tailwind
+    document.documentElement.classList.add('dark');
+  } else {
+    // Disable dark mode tailwind
+    document.documentElement.classList.remove('dark');
+  }
+
+/*End of Switch */
 
 
 
@@ -37,7 +56,7 @@ function App() {
     <input type="checkbox" id="darkMode" name="darkMode" value="darkMode" />
     <label htmlFor="darkMode" className="text-black ml-2">dark mode</label>
   </div>
-  <div className="w-2/3 h-96 bg-indigo-700 flex flex-col items-center justify-center relative">
+  <div className={`w-2/3 h-96 ${checked ? 'bg-indigo-950' : 'bg-indigo-700'} flex flex-col items-center justify-center relative`}>
     <div className="absolute top-0 left-0 mt-4 ml-4 text-white text-xl"><span className="text-lime-300" >Kerimcan</span>AK</div>
     
     <LanguageSwitcher />
@@ -50,9 +69,15 @@ function App() {
       <button className="bg-white text-indigo-700 font-bold py-2 px-4 rounded">Button 2</button>
     </div>
   </div>
-  <div className="w-1/3 h-96 bg-lime-300 flex items-center justify-center">
-  <img src={img1} alt="personal photo" className="absolute sm:transform sm:-translate-x-32 md:transform md:-translate-x-48 lg:transform lg:-translate-x-64 rounded h-60 w-48" />
-  
+  <div className={`w-1/3 h-96 ${checked ? 'bg-lime-950' : 'bg-lime-300' }`} >
+  <div className='left-0 mt-4 ml-4 flex flex-row'>
+  <Switch checked={checked} onChange={handleChange} />
+  <p className="text-xl font-bold text-indigo-700">
+    {darkModeText}
+  </p>
+</div>
+
+  <img src={img1} alt="personal photo" className="rounded absolute pt-12 sm:left-1/2 sm:transform sm:-translate-x-1/2 md:left-2/3 md:transform md:-translate-x-1/2 lg:left-2/3 lg:transform lg:-translate-x-1/2 h-72 w-48" />
   </div>
 </div>
 
@@ -60,10 +85,8 @@ function App() {
 
 
 
-<div className="flex flex-col sm:flex-row relative pb-10">
-  <div className="mt-4 ml-4 sm:absolute sm:top-0 sm:left-0 sm:mt-4 sm:ml-4">
-    <h1 className="text-indigo-700 p-12 text-4xl font-bold">{skills}</h1>
-  </div>
+<div className={`flex flex-col sm:flex-row relative pb-10 ${checked ? 'bg-zinc-800' : 'bg-white'}`}>
+  <h1 className="text-indigo-700 p-12 text-4xl font-bold">{skills}</h1>
   <div className="w-full flex justify-end mt-4 ml-4">
     <div className="w-3/4 flex flex-wrap justify-end">
       {items.map((item, index) => (
