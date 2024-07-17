@@ -85,7 +85,7 @@ function App() {
     onColor="#3a3a3a"
     offColor='#8f88ff'
   />
-  <p className="text-xl font-bold text-indigo-700">
+  <p className={`text-xl font-bold ${checked ? 'text-white' : 'text-indigo-700'}`}>
     {darkModeText}
   </p>
 </div>
