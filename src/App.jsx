@@ -197,16 +197,16 @@ function App() {
       <div className={`text-${checked ? 'white' : 'black'}`}>{sendMessageDetail}</div>
       <a href="mailto:kerimcanak@gmail.com" className="text-indigo-700 bold underline">kerimcanak@gmail.com</a>
       <div className="flex space-x-4 mt-4">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/profile.php?id=61557482306713" target="_blank" rel="noopener noreferrer">
           <FaFacebook size={30} className="text-indigo-700" />
         </a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/kerimcan_ak" target="_blank" rel="noopener noreferrer">
           <FaTwitter size={30} className="text-indigo-700" />
         </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/kerimcan-ak-471278280/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={30} className="text-indigo-700" />
         </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/kerimcanak201/" target="_blank" rel="noopener noreferrer">
           <FaInstagram size={30} className="text-indigo-700" />
         </a>
       </div>
