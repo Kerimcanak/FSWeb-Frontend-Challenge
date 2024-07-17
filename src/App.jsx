@@ -69,7 +69,7 @@ function App() {
           Github
         </button>
       </a>
-      <a href="https://www.linkedin.com/in/kerimcanak/" target="_blank" rel="noopener noreferrer" className="hover:bg-gray-200 transition duration-300">
+      <a href="https://www.linkedin.com/in/kerimcan-ak-471278280/" target="_blank" rel="noopener noreferrer" className="hover:bg-gray-200 transition duration-300">
       <button className={`bg-white text-indigo-700 font-bold py-2 px-4 rounded flex items-center ${checked ? 'bg-zinc-800 border-2 border-white text-white' : ''}`}>
       <FaLinkedin className="mr-2" />
           LinkedIn
