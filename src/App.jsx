@@ -41,13 +41,6 @@ function App() {
 
   const darkModeText = checked ? "Light Mode" : "Dark Mode";
 
-  if (checked) {
-    // Apply dark mode tailwind
-    document.documentElement.classList.add('dark');
-  } else {
-    // Disable dark mode tailwind
-    document.documentElement.classList.remove('dark');
-  }
 
 /*End of Switch */
 
@@ -86,7 +79,12 @@ function App() {
   </div>
   <div className={`w-1/3 h-96 ${checked ? 'bg-lime-950' : 'bg-lime-300' }`} >
   <div className='left-0 mt-4 ml-4 flex flex-row'>
-  <Switch checked={checked} onChange={handleChange} />
+  <Switch checked={checked} onChange={handleChange} 
+    uncheckedIcon={false}
+    checkedIcon={false}
+    onColor="#3a3a3a"
+    offColor='#8f88ff'
+  />
   <p className="text-xl font-bold text-indigo-700">
     {darkModeText}
   </p>
