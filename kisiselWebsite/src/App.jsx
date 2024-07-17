@@ -4,7 +4,7 @@ import LanguageSwitcher from './assets/LanguageSwitcher';
 import img1 from './assets/img1.png';
 import img2 from './assets/img2.png';
 import items from './assets/items';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 import Switch from "react-switch";
 
 function App() {
@@ -25,6 +25,12 @@ function App() {
   const preferredRole = state.language === 'en' ? "Preferred Role:" : "Tercih Edilen Rol:";
   const aboutMe = state.language === 'en' ? "About Me" : "Hakkımda";
   const aboutMeDetails = state.language === 'en' ? "Hello, everybody! <br/>I'm a front end developer,<br/> I like to work with computers, <br/>I follow sciences and reading. <br/>Every project is a new opportunity<br/> and a constant improvement." : "Merhaba! Ben bir front end developer'ım.<br/> Bilgisayarla ilgilenmeyi, bilimleri takip etmeyi <br/>ve okumayı seviyorum. Her proje yeni bir<br/> fırsat demek ve sürekli gelişmeyi sağlıyor."
+  const projects = state.language === 'en' ? "Projects" : "Projelerim";
+  const sendMessage = state.language === 'en' ? "Send me a message!" : "Bana bir mesaj gönderin!";
+  const sendMessageDetail = state.language === 'en' ? "Got a question or proposal, or just want to say hello? Go ahead." : "Sorularınız veya teklifleriniz var mı? Bana bir mesaj gönderebilirsiniz!";
+
+
+
 
   /*Switch */
   const [checked, setChecked] = useState(false);
@@ -33,7 +39,7 @@ function App() {
     setChecked(newChecked);
   };
 
-  const darkModeText = checked ? "lightMode" : "darkMode";
+  const darkModeText = checked ? "Light Mode" : "Dark Mode";
 
   if (checked) {
     // Apply dark mode tailwind
@@ -64,9 +70,19 @@ function App() {
     <p className="text-white mt-4">
       {firstText}
     </p>
-    <div className="mt-8">
-      <button className="bg-white text-indigo-700 font-bold py-2 px-4 rounded mr-4">Button 1</button>
-      <button className="bg-white text-indigo-700 font-bold py-2 px-4 rounded">Button 2</button>
+    <div className="mt-8 flex">
+      <a href="https://github.com/kerimcanak" target="_blank" rel="noopener noreferrer" className="hover:bg-gray-200 transition duration-300 mr-4">
+<button className={`bg-white text-indigo-700 font-bold py-2 px-4 rounded flex items-center ${checked ? 'bg-zinc-800 border-2 border-white text-white' : ''}`}>
+          <FaGithub className="mr-2" />
+          Github
+        </button>
+      </a>
+      <a href="https://www.linkedin.com/in/kerimcanak/" target="_blank" rel="noopener noreferrer" className="hover:bg-gray-200 transition duration-300">
+      <button className={`bg-white text-indigo-700 font-bold py-2 px-4 rounded flex items-center ${checked ? 'bg-zinc-800 border-2 border-white text-white' : ''}`}>
+      <FaLinkedin className="mr-2" />
+          LinkedIn
+        </button>
+      </a>
     </div>
   </div>
   <div className={`w-1/3 h-96 ${checked ? 'bg-lime-950' : 'bg-lime-300' }`} >
@@ -105,7 +121,7 @@ function App() {
 
 
 
-<div className="w-screen bg-indigo-700 p-4 pb-12">
+<div className={`w-screen ${checked ? 'bg-indigo-950': 'bg-indigo-700'} p-4 pb-12`}>
   <div className="flex flex-col md:flex-row h-full items-start">
     <div className="text-left flex-shrink-0">
       <h1 className="text-lime-300 p-12 text-4xl font-bold">{profile}</h1>
@@ -143,10 +159,10 @@ function App() {
 
 
 
-<div className="w-screen h-auto bg-lime-300 flex flex-col items-center justify-start space-y-4 py-4">
-  <h1 className="text-4xl font-bold text-indigo-700">Projects</h1>
+<div className={`w-screen h-auto bg-${checked ? 'lime-950' : 'lime-300'} flex flex-col items-center justify-start space-y-4 py-4`}>
+  <h1 className={`text-4xl font-bold text-${checked ? 'lime-300' : 'indigo-700'}`}>{projects}</h1>
   {/* proje kartları! */}
-  <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div className={`max-w-md mx-auto bg-${checked ? 'stone-800' : 'white'} rounded-xl shadow-md overflow-hidden md:max-w-2xl`}>
     <div className="md:flex">
       <div className="md:shrink-0">
         <img className="h-48 w-full object-cover md:h-full md:w-48" src="/img/building.jpg" alt="Modern building architecture" />
@@ -159,7 +175,7 @@ function App() {
     </div>
   </div>
   {/* proje kartı 2 */}
-  <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div className={`max-w-md mx-auto ${checked ? 'bg-stone-800' : 'bg-white'} rounded-xl shadow-md overflow-hidden md:max-w-2xl`}>
     <div className="md:flex">
       <div className="md:shrink-0">
         <img className="h-48 w-full object-cover md:h-full md:w-48" src="/img/building.jpg" alt="Modern building architecture" />
@@ -179,10 +195,10 @@ function App() {
 
 
 
-<footer className="w-screen h-64 bg-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold text-indigo-700">Send me a message!</h1>
-      <div>Got a question or proposal, or just want to say hello? Go ahead.</div>
-      <div>kerimcanak@gmail.com</div>
+<footer className={`w-screen h-64 bg-${checked ? 'zinc-800' : 'white'} flex flex-col items-center justify-center`}>
+      <h1 className={`text-4xl font-bold text-indigo-700`}>{sendMessage}</h1>
+      <div className={`text-${checked ? 'white' : 'black'}`}>{sendMessageDetail}</div>
+      <a href="mailto:kerimcanak@gmail.com" className="text-indigo-700 bold underline">kerimcanak@gmail.com</a>
       <div className="flex space-x-4 mt-4">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook size={30} className="text-indigo-700" />

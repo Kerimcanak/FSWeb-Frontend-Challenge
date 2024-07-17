@@ -8,33 +8,33 @@ import logo6 from "./logo6.png";
 const items = [
   {
     image: logo1,
-    title: "Innovative Solutions",
-    description: "Providing cutting-edge solutions for modern problems."
+    title: "Figma",
+    description: "VGE/Editor program."
   },
   {
     image: logo2,
-    title: "Creative Minds",
-    description: "Unleashing creativity to transform ideas into reality."
+    title: "Redux",
+    description: "State management."
   },
   {
     image: logo3,
-    title: "Tech Pioneers",
-    description: "Leading the way in technological advancements."
+    title: "VS Code",
+    description: "ide."
   },
   {
     image: logo4,
-    title: "Future Vision",
-    description: "Envisioning a brighter future with innovative technology."
+    title: "React",
+    description: "Javascript Framework."
   },
   {
     image: logo5,
-    title: "Smart Innovations",
-    description: "Bringing smart and efficient solutions to everyday life."
+    title: "Node.js",
+    description: "Server side development."
   },
   {
     image: logo6,
-    title: "Dynamic Growth",
-    description: "Fostering growth through dynamic and adaptive strategies."
+    title: "Javascript",
+    description: "Web development."
   }
 ];
 
