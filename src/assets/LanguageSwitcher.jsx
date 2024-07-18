@@ -17,6 +17,8 @@ function LanguageSwitcher() {
           : 'https://upload.wikimedia.org/wikipedia/commons/8/83/Bicycle-bell-3.wav'
       );
       audio.play();
+      const storage = JSON.parse(localStorage.getItem('languageSwitch')) || { text: 'language switch' };
+      localStorage.setItem('languageSwitch', JSON.stringify({ text: storage.text + ' you did it!' }));
       dispatch({
         type: 'SET_LANGUAGE',
         payload: language === 'en' ? 'tr' : 'en',

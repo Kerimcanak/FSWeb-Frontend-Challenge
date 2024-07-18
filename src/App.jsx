@@ -1,10 +1,10 @@
 import { useContext, useReducer } from 'react';
 import { LanguageContext } from './assets/LanguageContext';
-import LanguageSwitcher from './assets/LanguageSwitcher';
 import img1 from './assets/img1.png';
 import img2 from './assets/img2.png';
 import items from './assets/items';
 import SwitchContainer from './assets/SwitchComponent';
+import LanguageSwitcher from './assets/LanguageSwitcher';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 
 const initialState = { checked: false };
