@@ -7,7 +7,7 @@ import logo6 from "./logo6.png";
 
 const items = [
   {
-    image: logo1,
+    image: "./vite.svg",
     title: "Figma",
     description: "VGE/Editor program."
   },
